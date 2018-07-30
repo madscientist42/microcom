@@ -1,18 +1,17 @@
-*.o
+# Eclipse project config files...
+.cproject
+.project
+.settings
+# CMake/gmake related config files...
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
+Makefile
+# Editor backup files...
+*.bak
 *~
-/*.o
-/microcom
+# Compile generated content
+*.o
+microcom
 
-# autotools stuff
-/.deps
-/Makefile
-/Makefile.in
-/aclocal.m4
-/autom4te.cache
-/build-aux
-/config.h
-/config.h.in
-/config.log
-/config.status
-/configure
-/stamp-h1
+

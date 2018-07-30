@@ -7,8 +7,7 @@
  * version.
  */
 #include <stdio.h>
-#include <readline/readline.h>
-#include <readline/history.h>
+#include "linenoise.h"
 #include "microcom.h"
 
 #define MAXARGS 64
@@ -117,10 +116,11 @@ static int __do_commandline(const char *prompt)
 	char *cmd;
 	char *argv[MAXARGS + 1];
 	int argc = 0, ret = 0, n, len;
+	linenoiseHistorySetMaxLen(10);		// Remember 10 commands...
 
 	while (1) {
 		struct cmd *command;
-		cmd = readline(prompt);
+		cmd = linenoise(prompt);
 		if (!cmd) {
 			ret = MICROCOM_CMD_START;
 			break;
@@ -130,7 +130,7 @@ static int __do_commandline(const char *prompt)
 			goto done;
 
 		if (prompt)
-			add_history(cmd);
+			linenoiseHistoryAdd(cmd);
 
 		len = strlen(cmd);
 		n = 0;

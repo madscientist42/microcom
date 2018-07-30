@@ -30,8 +30,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#include "config.h"
-
 static struct termios sots;	/* old stdout/in termios settings to restore */
 
 struct ios_ops *ios;
