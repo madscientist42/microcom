@@ -56,6 +56,6 @@ INSTALLING
 
 This version of "microcom" uses CMake as a build system and is _self contained_, using the linenoise input editor framework as an
 explicit inclusion in the code.  You need only CMake and a modern C compiler to build this.  Just issue 'cmake .' in the current 
-directory or 'cmake <foo>' where "<foo>" is the path to where the source is currently residing to build in a out of tree build dir.
+directory or 'cmake {foo}' where "{foo}" is the path to where the source is currently residing to build in a out of tree build dir.
 
 The purpose of this was to produce a version of "microcom" that could build cleanly in a wider range of cross-compilation contexts than was ever possible with autotools.  It is intended to track the Debian upstream version that this was forked from, but it may lag a bit over time.
