@@ -54,16 +54,8 @@ AUTHOR
 
 INSTALLING 
 
-Microcom uses autoconf and libreadline-dev so you must to install it, run autoconf, ./configure and make 
+This version of "microcom" uses CMake as a build system and is _self contained_, using the linenoise input editor framework as an
+explicit inclusion in the code.  You need only CMake and a modern C compiler to build this.  Just issue 'cmake .' in the current 
+directory or 'cmake <foo>' where "<foo>" is the path to where the source is currently residing to build in a out of tree build dir.
 
-```
-apt-get install autoconf libreadline-dev
-
-autoconf
-./configure
-make
-
-```
-TROUBLESHOOTING
-
-autoconf could fail, run `autoreconf -i` to build the configure file  
+The purpose of this was to produce a version of "microcom" that could build cleanly in a wider range of cross-compilation contexts than was ever possible with autotools.  It is intended to track the Debian upstream version that this was forked from, but it may lag a bit over time.
